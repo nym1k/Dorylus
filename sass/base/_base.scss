@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // Defines 1rem
+}
+
+body {
+  box-sizing: border-box;
+  background: $color-primary-dark;
+}
+
+main {
+  padding: 0 3rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,188 @@
+.header {
+  padding-top: 50px;
+
+  nav {
+    padding: .5rem 3rem;
+    background: rgba($color-secondary-dark, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    ul {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      li {
+        display: inline-block;
+        a {
+          color: white;
+          padding: 1rem 3rem;
+          display: block;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+
+.section-hero {
+  padding: 3rem 0;
+  background-color: $color-primary-dark;
+
+  .hero {
+    height: 95vh;
+    width: 100%;
+    background: url('../img/hero.jpg') no-repeat center/cover;
+    text-align: center;
+    position: relative;
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__logo {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+.section-album {
+  background-color: $color-grey-dark;
+
+  .album {
+
+    &__image {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    &__tracklist {
+      ul {
+        list-style: none;
+        max-width: 90%;
+        margin: 0 auto;
+        li {
+          margin: 1.5rem 0;
+          font-weight: 700;
+        }
+      }
+    }
+
+  }
+}
+
+.section-band {
+  background-color: $color-secondary-dark;
+
+  .band {
+    &__bio {
+      padding: 3rem;
+    }
+    &__member {
+      max-width: 45%;
+      display: inline-block;
+      //background: red;
+      margin: .5rem;
+
+      &:hover {
+        transform: scale(1.05);
+        outline: 1rem solid $color-white;
+        outline-offset: .5rem;
+      }
+
+      // &.joe {
+      //   transform: translate(-30%, -20%);
+      // }
+      // &.craig {
+      //   transform: translate(60%, -20%);
+      // }
+      // &.edd {
+      //   transform: translate(-40%, -20%);
+      // }
+      // &.mitch {
+      //   transform: translate(60%, -20%);
+      // }
+    }
+  }
+}
+
+.section-discog {
+  .release {
+    &__player {
+
+    }
+
+    &__tracklist {
+      padding: 2rem 0;
+
+      ul {
+        list-style: none;
+
+        li {
+          margin: 1.5rem 0;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.section-media {
+}
+
+.section-live {
+}
+
+.section-contact {
+  background: $color-primary-dark;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  background: $color-primary-dark;
+}
+
+// .section-about {
+//   background-color: $color-grey-light-1;
+//   padding: 25rem 0;
+//   margin-top: -20vh;
+// }
+//
+// .section-features {
+//   padding: 20rem 0;
+//   background-image: linear-gradient(
+//     to right bottom,
+//     rgba($color-primary-light, 0.8),
+//     rgba($color-primary-dark, 0.8)),
+//     url('../img/nat-4.jpg');
+//     background-size: cover;
+//     transform: skewY(-7deg);
+//     margin-top: -12rem;
+//
+//     & > * {
+//       transform: skewY(7deg);
+//     }
+// }
+//
+// .section-tours {
+//   background-color: $color-grey-light-1;
+//   padding: 25rem 0 15rem;
+//   margin-top: -12rem;
+// }
+//
+// .section-stories {
+//   padding: 15rem 0;
+//   background-color: $color-grey-light-1;
+// }

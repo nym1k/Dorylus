@@ -1,0 +1,42 @@
+// COLOURS
+
+/*
+Dark #431E0E
+Orange #FC791D
+Pale Orange  #F0B861
+White
+Black #1B0A03
+*/
+
+$color-primary: #FC791D;
+$color-primary-light: #F0B861;
+$color-primary-dark: #1b1b1b;
+
+$color-secondary-dark: #431E0E;
+
+$color-grey-light: #999;
+
+$color-grey-dark: #222;
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+// GRID
+$gutter: 10px;
+$spacing: 5px;
+
+$grid__bp-sm: 576;
+$grid__bp-md: 768;
+$grid__bp-lg: 992;
+$grid__bp-xl: 1200;
+$grid__cols: 12;
+
+$map-grid-props: (
+'': 0,
+'-sm': $grid__bp-sm,
+'-md': $grid__bp-md,
+'-lg': $grid__bp-lg,
+'-xl': $grid__bp-xl
+);
