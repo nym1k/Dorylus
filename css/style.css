@@ -49,10 +49,17 @@ body {
 
 main {
   padding: 0 3rem; }
+  @media (max-width: 768px) {
+    main {
+      padding: 0 1rem; } }
 
 img {
   width: 100%;
   height: auto; }
+
+.video {
+  max-width: 100%;
+  display: none; }
 
 body {
   font-family: "Rambla", sans-serif;
@@ -99,9 +106,6 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all .2s; }
-  .heading-secondary:hover {
-    transform: skewY(2deg) skewX(15deg);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 2.5rem;
@@ -113,9 +117,6 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all .2s; }
-  .heading-tertiary:hover {
-    transform: skewY(2deg) skewX(15deg);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .paragraph {
   font-size: 1.6rem; }
@@ -156,6 +157,14 @@ body {
 
 .u-object-fit-contain {
   object-fit: contain; }
+
+@media (max-width: 768px) {
+  .md-order-1 {
+    order: 1; } }
+
+@media (max-width: 768px) {
+  .md-order-2 {
+    order: 2; } }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -224,6 +233,14 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .release__player {
+    text-align: center; } }
+
+@media (max-width: 768px) {
+  .release__tracklist {
+    text-align: center; } }
 
 @media screen and (max-width: -1px) {
   .hidden-xs-down {
@@ -529,28 +546,79 @@ body {
     .container__col-xl-offset-12 {
       margin-left: 100%; } }
 
-.header {
-  padding-top: 50px; }
-  .header nav {
-    padding: .5rem 3rem;
-    background: rgba(67, 30, 14, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100; }
-    .header nav ul {
-      width: 60%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around; }
-      .header nav ul li {
-        display: inline-block; }
-        .header nav ul li a {
-          color: white;
-          padding: 1rem 3rem;
-          display: block;
-          text-transform: uppercase; }
+.navigation__checkbox {
+  display: none; }
+
+.navigation__button {
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#F0B861, #1b1b1b);
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%; }
+
+.navigation__item {
+  margin: 1rem; }
+
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 220%;
+  transition: all .4s; }
+  .navigation__link:link span, .navigation__link:visited span {
+    margin-right: 1rem;
+    display: inline-block; }
+
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #FC791D;
+  transform: translateX(1rem); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
 
 .section-hero {
   padding: 3rem 0;
@@ -567,7 +635,8 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      width: 100%; }
     .section-hero .hero__logo {
       max-width: 800px;
       margin: 0 auto; }
@@ -584,12 +653,16 @@ body {
     .section-album .album__tracklist ul li {
       margin: 1.5rem 0;
       font-weight: 700; }
+  @media (max-width: 768px) {
+    .section-album .album__tracklist {
+      text-align: center; } }
 
 .section-band {
   background-color: #431E0E; }
   .section-band .band__bio {
     padding: 3rem; }
   .section-band .band__member {
+    position: relative;
     max-width: 45%;
     display: inline-block;
     margin: .5rem; }
@@ -597,6 +670,12 @@ body {
       transform: scale(1.05);
       outline: 1rem solid #fff;
       outline-offset: .5rem; }
+  .section-band .band__memberName {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: 500; }
 
 .section-discog .release__tracklist {
   padding: 2rem 0; }
@@ -605,6 +684,9 @@ body {
     .section-discog .release__tracklist ul li {
       margin: 1.5rem 0;
       font-weight: 700; }
+
+.section-live {
+  background-color: #431E0E; }
 
 .section-contact {
   background: #1b1b1b;

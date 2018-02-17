@@ -1,0 +1,14 @@
+.release {
+
+  &__player {
+    @include at-max-query(768) {
+      text-align: center;
+    }
+  }
+
+  &__tracklist {
+    @include at-max-query(768) {
+      text-align: center;
+    }
+  }
+}

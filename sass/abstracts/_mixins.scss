@@ -1,0 +1,17 @@
+@mixin center-horizontal-vertical {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin at-max-query($breakpoint) {
+  @media (max-width: ($breakpoint * 1px)) {
+    @content;
+  }
+}
+
+@mixin at-min-query($breakpoint) {
+  @media (max-width: ($breakpoint * 1px)) {
+    @content;
+  }
+}

@@ -14,26 +14,25 @@
       <link rel="stylesheet" href="css/style.css">
    </head>
    <body>
+
+     <div class="navigation">
+         <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+         <label for="navi-toggle" class="navigation__button">MENU</label>
+
+         <div class="navigation__background">&nbsp;</div>
+
+         <div class="navigation__nav">
+           <ul class="navigation__list">
+             <li class="navigation__item"><a href="#album" class="navigation__link">Album</a></li>
+             <li class="navigation__item"><a href="#band" class="navigation__link">Band</a></li>
+             <li class="navigation__item"><a href="#discography" class="navigation__link">Discography</a></li>
+             <li class="navigation__item"><a href="#live" class="navigation__link">Live Dates</a></li>
+           </ul>
+         </div>
+       </div>
+
      <header class="header">
-       <nav class="main-header">
-         <ul>
-           <li>
-             <a href="#">Album</a>
-           </li>
-           <li>
-             <a href="#">Band</a>
-           </li>
-           <li>
-             <a href="#">Discography</a>
-           </li>
-           <li>
-             <a href="#">Merch</a>
-           </li>
-           <li>
-             <a href="#">Live</a>
-           </li>
-         </ul>
-       </nav>
        <section class="section-hero">
          <div class="hero">
            <div class="hero__content">
@@ -48,18 +47,18 @@
      </header>
 
      <main>
-       <section class="section-album u-spacing-big">
+       <section id="album" class="section-album u-spacing-big">
          <div class="u-center-text">
            <h2 class="heading-secondary u-margin-bottom-medium">New Album - Coming 25/26/27</h2>
          </div>
          <div class="container album">
            <div class="container__row">
-             <div class="container__col-6">
+             <div class="container__col-12 container__col-md-6">
                <div class="album__image">
                  <img src="img/album.jpg" alt="Dorylus Debut Album">
                </div>
              </div>
-             <div class="container__col-6">
+             <div class="container__col-12 container__col-md-6">
                <div class="album__tracklist">
                  <ul>
                    <li>Track One - <a href="#">Lyrics</a></li>
@@ -77,13 +76,13 @@
          </div>
        </section>
 
-       <section class="section-band u-spacing-medium">
+       <section id="band" class="section-band u-spacing-medium">
          <div class="container band">
            <div class="u-center-text">
              <h2 class="heading-secondary u-margin-bottom-medium">About The Band</h2>
            </div>
            <div class="container__row">
-             <div class="container__col-6">
+             <div class="container__col-12 container__col-md-6 md-order-2">
                <div class="band__bio">
                  <p>Dorylus are a hard-hitting 4 piece metal band from Hertfordshire that plays Melodic Thrash/Death Metal. Since our inception in January 2015 we’ve released our EP ‘The Rapture’ in December of the same year, and have obtained a strong following in all areas of the country we’ve reached so far.</p>
 
@@ -92,36 +91,40 @@
                  <p>With influences ranging from classic bands like Iron Maiden and Slayer to modern acts such as Lamb of God and Amon Amarth, we promise to deliver the perfect blend of face melting, bone crunching heavy metal and ensure that if you see us you won’t regret it!</p>
                </div>
              </div>
-             <div class="container__col-4 container__col-offset-2">
+             <div class="container__col-12 container__col-offset-md-2 container__col-md-4 md-order-1">
                <div class="band__member joe">
                  <img src="img/joe.jpg" alt="Joe Lyndon">
+                 <span class="band__memberName">Joe</span>
                </div>
                <div class="band__member craig">
                  <img src="img/craig.jpg" alt="Craig Carmichael">
+                 <span class="band__memberName">Craig</span>
                </div>
                <div class="band__member edd">
                  <img src="img/edd.jpg" alt="Edd Littler">
+                 <span class="band__memberName">Edd</span>
                </div>
                <div class="band__member mitch">
                  <img src="img/mitch.jpg" alt="Mitch Cartwright">
+                 <span class="band__memberName">Mitch</span>
                </div>
              </div>
            </div>
          </div>
        </section>
 
-       <section class="section-discog u-spacing-big">
+       <section id="discography" class="section-discog u-spacing-big">
          <div class="container">
            <div class="u-center-text">
              <h2 class="heading-secondary u-margin-bottom-medium">Discography</h2>
            </div>
            <div class="container__row release u-margin-bottom-medium">
-              <div class="container__col-3 container__col-offset-1">
+              <div class="container__col-12 container__col-md-3 container__col-offset-md-1">
                 <div class="release__player">
                   <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2759400452/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://dorylusband.bandcamp.com/album/mirrors-e-p">Mirrors E.P. by Dorylus</a></iframe>
                 </div>
               </div>
-              <div class="container__col-5 container__col-offset-1">
+              <div class="container__col-12 container__col-md-5 container__col-offset-md-1">
                 <div class="release__tracklist u-right-text">
                   <h3 class="heading-tertiary">Mirrors E.P. (1999)</h3>
                   <ul>
@@ -132,7 +135,7 @@
               </div>
            </div>
            <div class="container__row release">
-              <div class="container__col-6 container__col-offset-1">
+              <div class="container__col-12 container__col-md-6 container__col-offset-md-1 md-order-2">
                 <div class="release__tracklist">
                   <h3 class="heading-tertiary">Rapture E.P. (1999)</h3>
                   <ul>
@@ -145,7 +148,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="container__col-3">
+              <div class="container__col-12 container__col-md-3 md-order-1">
                 <div class="release__player">
                   <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=3642791263/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://dorylusband.bandcamp.com/album/the-rapture">The Rapture by Dorylus</a></iframe>
                 </div>
@@ -154,18 +157,18 @@
          </div>
        </section>
 
-       <section class="section-media u-spacing-big">
+       <!-- <section class="section-media u-spacing-big">
          <div class="u-center-text">
            <h2 class="heading-secondary u-margin-bottom-medium">Media</h2>
          </div>
-         <div class="container__col-6 container__col-offset-3">
+         <div class="container__col-12 container__col-md-6 container__col-offset-md-3">
            <div class="video">
              <iframe width="560" height="315" src="https://www.youtube.com/embed/59f9jsm9njE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            </div>
          </div>
-       </section>
+       </section> -->
 
-       <section class="section-live u-spacing-medium">
+       <section id="live" class="section-live u-spacing-medium">
          <div class="u-center-text">
            <h2 class="heading-secondary u-margin-bottom-medium">Live Dates</h2>
          </div>

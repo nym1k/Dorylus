@@ -15,3 +15,15 @@
 .u-object-fit-contain {
   object-fit: contain;
 }
+
+.md-order-1 {
+  @include at-max-query(768) {
+    order: 1;
+  }
+}
+
+.md-order-2 {
+  @include at-max-query(768) {
+    order: 2;
+  }
+}
