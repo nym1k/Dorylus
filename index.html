@@ -18,11 +18,13 @@
      <div class="navigation">
          <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 
-         <label for="navi-toggle" class="navigation__button">MENU</label>
+         <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+        </label>
 
          <div class="navigation__background">&nbsp;</div>
 
-         <div class="navigation__nav">
+         <div id="nav" class="navigation__nav">
            <ul class="navigation__list">
              <li class="navigation__item"><a href="#album" class="navigation__link">Album</a></li>
              <li class="navigation__item"><a href="#band" class="navigation__link">Band</a></li>
@@ -40,6 +42,7 @@
                <img src="img/logo.png" alt="Dorylus">
              </div>
              <h2 class="heading-primary">Debut album out 25/26/37</h2>
+             <a href="#album" class="btn btn--white">Check it out, you slag</a>
              <!-- <p>Preorder now at www.something.com</p> -->
            </div>
          </div>
@@ -91,7 +94,7 @@
                  <p>With influences ranging from classic bands like Iron Maiden and Slayer to modern acts such as Lamb of God and Amon Amarth, we promise to deliver the perfect blend of face melting, bone crunching heavy metal and ensure that if you see us you won’t regret it!</p>
                </div>
              </div>
-             <div class="container__col-12 container__col-offset-md-2 container__col-md-4 md-order-1">
+             <div class="container__col-12 container__col-md-offset-2 container__col-md-4 md-order-1">
                <div class="band__member joe">
                  <img src="img/joe.jpg" alt="Joe Lyndon">
                  <span class="band__memberName">Joe</span>
@@ -119,12 +122,12 @@
              <h2 class="heading-secondary u-margin-bottom-medium">Discography</h2>
            </div>
            <div class="container__row release u-margin-bottom-medium">
-              <div class="container__col-12 container__col-md-3 container__col-offset-md-1">
+              <div class="container__col-12 container__col-md-3 container__col-md-offset-1">
                 <div class="release__player">
                   <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2759400452/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://dorylusband.bandcamp.com/album/mirrors-e-p">Mirrors E.P. by Dorylus</a></iframe>
                 </div>
               </div>
-              <div class="container__col-12 container__col-md-5 container__col-offset-md-1">
+              <div class="container__col-12 container__col-md-5 container__col-md-offset-1">
                 <div class="release__tracklist u-right-text">
                   <h3 class="heading-tertiary">Mirrors E.P. (1999)</h3>
                   <ul>
@@ -135,7 +138,7 @@
               </div>
            </div>
            <div class="container__row release">
-              <div class="container__col-12 container__col-md-6 container__col-offset-md-1 md-order-2">
+              <div class="container__col-12 container__col-md-6 container__col-md-offset-1 md-order-2">
                 <div class="release__tracklist">
                   <h3 class="heading-tertiary">Rapture E.P. (1999)</h3>
                   <ul>
@@ -161,7 +164,7 @@
          <div class="u-center-text">
            <h2 class="heading-secondary u-margin-bottom-medium">Media</h2>
          </div>
-         <div class="container__col-12 container__col-md-6 container__col-offset-md-3">
+         <div class="container__col-12 container__col-md-6 container__col-md-offset-3">
            <div class="video">
              <iframe width="560" height="315" src="https://www.youtube.com/embed/59f9jsm9njE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            </div>
@@ -190,5 +193,32 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        // #nav a on click
+        $('#nav a').click(function(){
+          // #navi-toggle uncheck
+          $('#navi-toggle').prop('checked', false);
+        });
+
+        // Smooth Scroll
+        $(function() {
+          $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+              }
+            }
+          });
+        });
+
+      });
+    </script>
    </body>
 </html>
