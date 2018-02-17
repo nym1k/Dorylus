@@ -724,6 +724,9 @@ body {
 
 .section-live {
   background-color: #431E0E; }
+  .section-live .bit-widget-container {
+    max-width: 1160px;
+    margin: 0 auto; }
 
 .section-contact {
   background: #1b1b1b;
